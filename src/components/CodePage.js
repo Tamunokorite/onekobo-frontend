@@ -1,4 +1,5 @@
 import React from "react";
+
 import {
   ImageBackground,
   ScrollView,
@@ -10,7 +11,7 @@ import {
   Image,
 } from "react-native";
 
-const CodePage = () => {
+const CodePage = ({ navigation }) => {
   return (
     <ImageBackground
       source={require("../../assets/images/form-bg.png")}
@@ -32,7 +33,11 @@ const CodePage = () => {
           </View>
         </View>
 
-        <TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => {
+            navigation.navigate("NumberConfirmation");
+          }}
+        >
           <Image
             style={styles.backArrow}
             source={require("../../assets/images/arrow-left.png")}
@@ -55,8 +60,79 @@ const CodePage = () => {
           </View>
         </View>
         <View style={styles.btn}>
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate("SignInPage");
+            }}
+          >
             <Text style={styles.btnText}>New code 1:24</Text>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.numberContainer}>
+          <TouchableOpacity>
+            <View style={styles.number}>
+              <Text style={styles.bigText}>1</Text>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <View style={styles.number}>
+              <Text style={styles.bigText}>2</Text>
+              <Text style={styles.smallText}>ABC</Text>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <View style={styles.number}>
+              <Text style={styles.bigText}>3</Text>
+              <Text style={styles.smallText}>DEF</Text>
+            </View>
+          </TouchableOpacity>
+        </View>
+        <View style={[styles.numberContainer, styles.numberContainerTwo]}>
+          <TouchableOpacity>
+            <View style={styles.number}>
+              <Text style={styles.bigText}>4</Text>
+              <Text style={styles.smallText}>GHI</Text>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <View style={styles.number}>
+              <Text style={styles.bigText}>5</Text>
+              <Text style={styles.smallText}>JKL</Text>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <View style={styles.number}>
+              <Text style={styles.bigText}>6</Text>
+              <Text style={styles.smallText}>MNO</Text>
+            </View>
+          </TouchableOpacity>
+        </View>
+        <View style={[styles.numberContainer, styles.numberContainerTwo]}>
+          <TouchableOpacity>
+            <View style={styles.number}>
+              <Text style={styles.bigText}>7</Text>
+              <Text style={styles.smallText}>PQRS</Text>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <View style={styles.number}>
+              <Text style={styles.bigText}>8</Text>
+              <Text style={styles.smallText}>TUV</Text>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <View style={styles.number}>
+              <Text style={styles.bigText}>9</Text>
+              <Text style={styles.smallText}>WXYZ</Text>
+            </View>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.lastBtn}>
+          <TouchableOpacity>
+            <View style={styles.number}>
+              <Text style={styles.bigText}>9</Text>
+              <Text style={styles.smallText}>WXYZ</Text>
+            </View>
           </TouchableOpacity>
         </View>
       </ScrollView>
@@ -134,6 +210,38 @@ const styles = StyleSheet.create({
     fontSize: 16,
     lineHeight: 24,
     color: "#161515",
+  },
+  numberContainer: {
+    alignItems: "center",
+    flexDirection: "row",
+    marginTop: 42,
+    justifyContent: "center",
+    paddingLeft: 6,
+  },
+  numberContainerTwo: {
+    marginTop: 3,
+  },
+  number: {
+    height: 46,
+    width: 114,
+    marginRight: 4,
+    backgroundColor: " rgba(255, 255, 255, 0.78)",
+    borderRadius: 5,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  bigText: {
+    fontSize: 25,
+  },
+  smallText: {
+    fontSize: 10,
+    paddingBottom: 10,
+  },
+  lastBtn: {
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 3,
+    marginLeft: 2,
   },
 });
 export default CodePage;

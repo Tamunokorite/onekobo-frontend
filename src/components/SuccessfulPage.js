@@ -9,7 +9,7 @@ import {
   Image,
 } from "react-native";
 
-const SuccessfulPage = () => {
+const SuccessfulPage = ({ navigation }) => {
   return (
     <ImageBackground
       source={require("../../assets/images/form-bg.png")}
@@ -30,6 +30,16 @@ const SuccessfulPage = () => {
             />
           </View>
         </View>
+        <TouchableOpacity
+          onPress={() => {
+            navigation.navigate("MainScreen");
+          }}
+        >
+          <Image
+            style={styles.backArrow}
+            source={require("../../assets/images/arrow-left.png")}
+          />
+        </TouchableOpacity>
         <View style={styles.modal}>
           <View>
             <Image source={require("../../assets/images/success.png")} />
@@ -76,6 +86,10 @@ const styles = StyleSheet.create({
   modalText: {
     fontSize: 20,
     lineHeight: 34,
+  },
+  backArrow: {
+    marginTop: 58,
+    marginLeft: 26,
   },
 });
 export default SuccessfulPage;

@@ -10,7 +10,7 @@ import {
   TouchableOpacity,
   Image,
 } from "react-native";
-const FundWallet = () => {
+const FundWallet = ({ navigation }) => {
   return (
     <ImageBackground
       source={require("../../assets/images/form-bg.png")}
@@ -31,7 +31,11 @@ const FundWallet = () => {
             />
           </View>
         </View>
-        <TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => {
+            navigation.navigate("More");
+          }}
+        >
           <Image
             style={styles.backArrow}
             source={require("../../assets/images/arrow-left.png")}
@@ -42,17 +46,29 @@ const FundWallet = () => {
           <Text style={styles.amount}>AMOUNT</Text>
           <Text style={styles.figure}>N0.00</Text>
           <View style={styles.buttonContainer}>
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate("SuccessfulPage");
+              }}
+            >
               <View style={styles.btn}>
                 <Text>N100.00</Text>
               </View>
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate("SuccessfulPage");
+              }}
+            >
               <View style={styles.btn}>
                 <Text>N500.00</Text>
               </View>
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate("SuccessfulPage");
+              }}
+            >
               <View style={styles.btn}>
                 <Text>N1000.00</Text>
               </View>

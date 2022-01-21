@@ -10,7 +10,7 @@ import {
   Image,
 } from "react-native";
 
-const BankAccountPage = () => {
+const BankAccountPage = ({ navigation }) => {
   return (
     <ImageBackground
       source={require("../../assets/images/form-bg.png")}
@@ -50,15 +50,21 @@ const BankAccountPage = () => {
             source={require("../../assets/images/dots.png")}
           />
         </View>
-        <View style={styles.sectionContainer}>
-          <View style={styles.iconContainer}>
-            <Image
-              style={styles.firstIcon}
-              source={require("../../assets/images/plus_square.png")}
-            />
+        <TouchableOpacity
+          onPress={() => {
+            navigation.navigate("BudgetPage");
+          }}
+        >
+          <View style={styles.sectionContainer}>
+            <View style={styles.iconContainer}>
+              <Image
+                style={styles.firstIcon}
+                source={require("../../assets/images/plus_square.png")}
+              />
+            </View>
+            <Text style={styles.text}>ADD TO CARD</Text>
           </View>
-          <Text style={styles.text}>ADD TO CARD</Text>
-        </View>
+        </TouchableOpacity>
         <View style={styles.sectionContainer}>
           <View style={[styles.iconContainer, styles.secondIconContainer]}>
             <Image source={require("../../assets/images/clear-2.png")} />

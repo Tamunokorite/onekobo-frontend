@@ -9,7 +9,7 @@ import {
   Image,
 } from "react-native";
 
-const MainScreen = () => {
+const MainScreen = ({ navigation }) => {
   return (
     <ImageBackground
       source={require("../../assets/images/form-bg.png")}
@@ -30,6 +30,16 @@ const MainScreen = () => {
             />
           </View>
         </View>
+        <TouchableOpacity
+          onPress={() => {
+            navigation.navigate("SignInPage");
+          }}
+        >
+          <Image
+            style={styles.backArrow}
+            source={require("../../assets/images/arrow-left.png")}
+          />
+        </TouchableOpacity>
         <View style={styles.vaultContainer}>
           <Image
             style={styles.image}
@@ -46,7 +56,11 @@ const MainScreen = () => {
               <Text>SEND</Text>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate("BankAccountPage");
+            }}
+          >
             <View style={styles.singleAction}>
               <View style={[styles.actionIcon, styles.actionIconTwo]}>
                 <Image
@@ -57,7 +71,11 @@ const MainScreen = () => {
               <Text>REQUEST</Text>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate("More");
+            }}
+          >
             <View style={styles.singleAction}>
               <View style={[styles.actionIcon, styles.actionIconThree]}>
                 <Image source={require("../../assets/images/plus-icon.png")} />
@@ -96,6 +114,10 @@ const styles = StyleSheet.create({
   image: {
     width: 250,
     height: 250,
+  },
+  backArrow: {
+    marginTop: 58,
+    marginLeft: 30,
   },
   vaultContainer: {
     alignItems: "center",

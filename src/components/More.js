@@ -10,7 +10,7 @@ import {
   Image,
 } from "react-native";
 
-const More = () => {
+const More = ({ navigation }) => {
   return (
     <ImageBackground
       source={require("../../assets/images/form-bg.png")}
@@ -48,7 +48,11 @@ const More = () => {
 
           <Text style={styles.paymentText}>TRANSFER LIMIT:N5000</Text>
         </View>
-        <TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => {
+            navigation.navigate("FundWallet");
+          }}
+        >
           <View style={styles.optionContainer}>
             <View
               style={[styles.optionImageContainer, styles.firstImageContainer]}

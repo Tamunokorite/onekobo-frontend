@@ -1,4 +1,6 @@
 import React from "react";
+// import { NavigationContainer } from "@react-navigation/native";
+// import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import {
   View,
   ImageBackground,
@@ -10,7 +12,7 @@ import {
   Image,
 } from "react-native";
 
-const Form = () => {
+const Form = ({ navigation }) => {
   return (
     <ImageBackground
       source={require("../../assets/images/form-bg.png")}
@@ -74,10 +76,20 @@ const Form = () => {
         <TouchableOpacity>
           <Text style={styles.lastText}>Forgot password?</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.submitText}>
+        <TouchableOpacity
+          onPress={() => {
+            navigation.navigate("NumberConfirmation");
+          }}
+          style={styles.submitText}
+        >
           <Text>Sign Up My Account</Text>
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => {
+            navigation.navigate("SignInPage");
+          }}
+          style={styles.btn}
+        >
           <Text style={styles.signInText}>
             Already have an account? -
             <Text style={styles.boldSignIn}>Sign In</Text>
@@ -113,7 +125,6 @@ const styles = StyleSheet.create({
   backArrow: {
     marginTop: 58,
     marginLeft: 26,
-    fontWeight: "bold",
   },
   inputHeader: {
     paddingLeft: 15,
