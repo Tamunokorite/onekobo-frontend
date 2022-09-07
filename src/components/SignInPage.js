@@ -140,7 +140,7 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
   },
   icon: {
-    marginLeft: 5,
+    marginLeft: 10,
   },
   backArrow: {
     marginTop: 58,

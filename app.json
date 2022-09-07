@@ -28,6 +28,6 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "description": "This App manages your Savings"
+    "description": "The App with the routings added"
   }
 }

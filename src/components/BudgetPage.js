@@ -21,17 +21,21 @@ const BudgetPage = () => {
         <View style={styles.formHeader}>
           <Text style={styles.time}>19:02</Text>
           <View style={styles.headerIcons}>
-            <Image source={require("../../assets/images/reception.png")} />
-            <Image
-              source={require("../../assets/images/wifi.png")}
-              style={styles.icon}
-            />
-            <Image
-              source={require("../../assets/images/battery.png")}
-              style={styles.icon}
-            />
+            <View style={styles.icon}>
+              <Image source={require("../../assets/images/reception.png")} />
+            </View>
+            <View style={styles.icon}>
+              <Image
+                source={require("../../assets/images/wifi.png")}
+                style={styles.icon}
+              />
+            </View>
+            <View style={styles.icon}>
+              <Image source={require("../../assets/images/battery.png")} />
+            </View>
           </View>
         </View>
+
         <View style={styles.dateContainer}>
           <TouchableOpacity>
             <Image
@@ -67,6 +71,7 @@ const BudgetPage = () => {
             <Text>NEW</Text>
           </View>
         </View>
+        <TouchableOpacity />
         <Text style={styles.vaultText}>N15,500</Text>
         <TouchableOpacity>
           <View style={styles.infoContainer}>
@@ -145,7 +150,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   headerIcons: {
-    marginTop: 10,
+    marginTop: 5,
     marginRight: 20,
     flexDirection: "row",
     justifyContent: "space-between",
@@ -156,7 +161,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   icon: {
-    marginLeft: 5,
+    marginRight: 5,
   },
   dateContainer: {
     marginTop: 30,

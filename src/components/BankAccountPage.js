@@ -71,6 +71,7 @@ const BankAccountPage = ({ navigation }) => {
           </View>
           <Text style={styles.text}>DELETE CARD</Text>
         </View>
+        <TouchableOpacity />
         <TouchableOpacity>
           <View style={styles.btn}>
             <Text style={styles.btnText}>SAVE </Text>
@@ -106,7 +107,7 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
   },
   icon: {
-    marginLeft: 5,
+    marginLeft: 10,
   },
   dateContainer: {
     marginTop: 20,

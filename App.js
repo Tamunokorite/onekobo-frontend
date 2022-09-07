@@ -20,6 +20,8 @@ import Summary from "./src/components/Summary";
 import FundWallet from "./src/components/FundWallet";
 
 const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
+
 const App = () => {
   return (
     <NavigationContainer>
